@@ -973,7 +973,6 @@ public class DataInfo extends Keyed<DataInfo> {
     int [] offs = fullCatOffsets();
     int expandedVal = val + offs[cid];
     if(expandedVal >= offs[cid+1]) {  // previously unseen level
-      assert _valid:"Categorical value out of bounds, got " + val + ", next cat starts at " + fullCatOffsets()[cid+1];
       if(_skipMissing)
         return -1;
       val = _catNAFill[cid];
